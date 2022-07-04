@@ -1,1 +1,1 @@
-# catalog-of-my-thingsk
+# catalog-of-my-things
