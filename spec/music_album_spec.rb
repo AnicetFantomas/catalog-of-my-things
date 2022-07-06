@@ -1,33 +1,40 @@
-require './helpers/spec_helper'
+require 'spec_helper'
 
 describe MusicAlbum do
-before(:all) do
-  @app = App.new
-  @music = MusicAlbum.new('2000-01-01', archived: false, on_spotify: true)
-  @pop = Genre.new('Pop')
-  @rock = Genre.new('Rock')
-  @music.add_genre(@pop)
-end
+  before(:all) do
+    @app = App.new
+    @music = MusicAlbum.new('2015-06-23', false, on_spotify: true)
+    @pop = Genre.new('pop')
+    @music.add_genre(@pop)
+  end
 
-context 'test all class properties' do
-  it 'should have a publish date' do
-    expect(@music.publish_date).to eq('2000-01-01')
-  end
-  it 'should have a archived property' do
-    expect(@music.archived).to eq(false)
-  end
-  it 'should have a on_spotify property' do
-    expect(@music.on_spotify).to eq(true)
-  end
-  it 'should have a genre property' do
-    expect(@music.genre).to eq(@pop)
-  end
-end
+  context 'test all class properties' do
+    it 'check if music is an instance' do
+      expect(@music).to be_an_instance_of MusicAlbum
+    end
 
-context 'test all class methods' do
-  it 'should have a can_be_archived? method' do
-    expect(@music.can_be_archived?).to eq(true)
+    it 'show inheritance from item class' do
+      expect(@music).to be_kind_of Item
+    end
+
+    it 'check if music can be moved to archive' do
+      @music.move_to_archive
+      expect(@music.archived).to eql(false)
+    end
+
+    it 'confirm genre of music' do
+      expect(@music.genre.name).to eql('pop')
+    end
+  end
+
+  context 'test app methods for music albums' do
+    before(:all) do
+      @music_albums = []
+      add_music_album(@music_albums, @music)
+    end
+
+    it 'add a music album to a list of albums' do
+      expect(@music_albums).to include(@music)
+    end
   end
 end
-end
-
