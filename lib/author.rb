@@ -1,4 +1,4 @@
-require './item'
+require_relative './item'
 
 class Author
     attr_reader :items
@@ -12,6 +12,6 @@ class Author
     end
 
     def add_item(item)
-        @items = item 
+        @items << item
     end
 end
