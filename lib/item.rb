@@ -29,6 +29,7 @@ class Item
   def add_author(author)
     @author = author
     author.add_item(self)
+  end
 
   def add_genre(genre)
     @genre = genre

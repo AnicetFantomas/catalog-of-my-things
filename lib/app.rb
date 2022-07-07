@@ -65,6 +65,9 @@ class App
       display_options
       choice = gets.chomp.to_i
     end
-    save_all(@books, @labels, @musics, @genres, @games, @authors)
+
+    save_books_labels(@books, @labels)
+    save_games_authors(@games, @authors)
+    save_musics_genres(@musics, @genres)
   end
 end
