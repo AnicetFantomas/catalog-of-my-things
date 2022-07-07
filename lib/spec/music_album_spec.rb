@@ -1,22 +1,33 @@
-require_relative '../lib/item'
-require_relative '../lib/genre'
+require './music_album'
+require './genre'
 
-describe Genre do
+describe MusicAlbum do
   before :each do
-    @item = Item.new('2000-01-01')
-    @genre = Genre.new(name: 'any name')
+    @album = MusicAlbum.new(publish_date: '01/01/2001', archived: false, on_spotify: true)
   end
 
-  it 'has a name' do
-    expect(@genre.name).to eq('any name')
+  describe 'initialize' do
+    it 'should be a MusicAlbum' do
+      expect(@album).to be_instance_of(MusicAlbum)
+    end
+
+    it 'should initialize with id' do
+      expect(@album.id.nil?).to be_falsey
+    end
   end
 
-  it 'has items' do
-    expect(@genre.items).to eq([])
-  end
+  describe 'Unit test for MusicAlbum' do
+    it 'should be on Spotify' do
+      expect(@album.on_spotify).to be_truthy
+    end
 
-  it 'can add items' do
-    @genre.add_item(@item)
-    expect(@genre.items.length).to eq(1)
+    it 'Can be archived' do
+      expect(@album.can_be_archived?).to be_truthy
+    end
+
+    it 'Should be archived' do
+      @album.move_to_archive
+      expect(@album.archived).to be_truthy
+    end
   end
 end
