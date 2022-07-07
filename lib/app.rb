@@ -23,8 +23,6 @@ class App
   def run
     display_options
     choice_options
-    display_options_games_author
-    choice_options_games_author
   end
 
   def display_options
