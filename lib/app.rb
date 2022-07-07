@@ -36,7 +36,7 @@ class App
     puts '4. List all labels'
     puts '7. List all music'
     puts '8. List all genres'
-    puts '9. Exit'
+    puts '13. Exit'
     puts '================'
     puts 'Enter your choice: '
   end
@@ -45,6 +45,8 @@ class App
     choice = gets.chomp.to_i
     while choice != 9
       case choice
+      when 1..4
+        book_label_options(choice, @books, @labels)
       when 5..8
         music_options(choice, @musics, @genres)
       else
@@ -53,6 +55,7 @@ class App
       display_options
       choice = gets.chomp.to_i
     end
+    puts('Thanks for using My Things!')
     save_all(@books, @labels, @musics, @genres)
   end
 end
