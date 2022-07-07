@@ -26,7 +26,7 @@ class Item
   end
 
   def add_author(author)
-    @author = author 
-    author.add_item(self) 
+    @author = author
+    author.add_item(self)
   end
 end

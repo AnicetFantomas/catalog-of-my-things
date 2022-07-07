@@ -28,7 +28,7 @@ module LoadData
     end
   end
 
-  def load_games 
+  def load_games
     if File.exist?('./data/games.json')
       games_json = File.read('./data/games.json')
       games_hash = JSON.parse(games_json)
@@ -43,12 +43,12 @@ module LoadData
   def load_authors
     if File.exist?('./data/authors.json')
       authors_json = File.read('./data/authors.json')
-      authors_json = JSON.parse(authors_json)
+      authors_hash = JSON.parse(authors_json)
       authors_hash.map do |author_hash|
         Author.new(author_hash['first_name'], author_hash['last_name'])
       end
-      else
-        []
-      end
+    else
+      []
+    end
   end
 end

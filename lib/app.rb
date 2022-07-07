@@ -5,7 +5,7 @@ require_relative 'author'
 require_relative '../data_module/load_data'
 require_relative '../data_module/save_data'
 require_relative 'book_label_utils'
-require_relative 'game_author_utils.rb'
+require_relative 'game_author_utils'
 
 class App
   include SaveData
@@ -55,5 +55,4 @@ class App
     end
     save_all(@books, @labels, @games, @authors)
   end
-
 end
