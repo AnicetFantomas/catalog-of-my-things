@@ -30,10 +30,10 @@ class App
     puts '================'
     puts '1. Add a new book'
     puts '2. Add a new label'
-    puts '3. Add a new music'
-    puts '4. Add a new genre'
-    puts '5. List all books'
-    puts '6. List all labels'
+    puts '5. Add a new music'
+    puts '6. Add a new genre'
+    puts '3. List all books'
+    puts '4. List all labels'
     puts '7. List all music'
     puts '8. List all genres'
     puts '9. Exit'
@@ -45,22 +45,8 @@ class App
     choice = gets.chomp.to_i
     while choice != 9
       case choice
-      when 1
-        add_book(@books)
-      when 2
-        add_label(@labels)
-      when 3
-        add_music(@musics)
-      when 4
-        add_genre(@genres)
-      when 5
-        list_books(@books)
-      when 6
-        list_labels(@labels)
-      when 7
-        list_music(@musics)
-      when 8
-        list_genres(@genres)
+      when 5..8
+        music_options(choice, @musics, @genres)
       else
         puts 'Invalid choice'
       end

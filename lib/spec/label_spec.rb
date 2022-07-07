@@ -1,7 +1,6 @@
 require_relative '../lib/item'
 require_relative '../lib/music_album'
 
-
 describe MusicAlbum do
   before :each do
     @item = MusicAlbum.new('2000-01-01')

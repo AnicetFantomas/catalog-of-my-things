@@ -4,7 +4,7 @@ module UtilityMusic
     publish_date = gets.chomp
     puts 'Is it on spotify? [y/n]: '
     on_userchoice = gets.chomp
-    on_spotify = on_userchoice == 'y' ? true : false
+    on_spotify = on_userchoice == 'y'
     musics << MusicAlbum.new(publish_date, on_spotify)
   end
 
@@ -26,6 +26,19 @@ module UtilityMusic
     genres.each do |genre|
       puts "Name: #{genre.name}"
       puts '================'
+    end
+  end
+
+  def music_options(input, musics, genres)
+    case input
+    when 5
+      add_music(musics)
+    when 6
+      add_genre(genres)
+    when 7
+      list_music(musics)
+    when 8
+      list_genres(genres)
     end
   end
 end
