@@ -1,6 +1,6 @@
 require 'json'
 module SaveData
-  def save_games_author(games, authors)
+  def save_games_authors(games, authors)
     save_games(games)
     save_authors(authors)
   end

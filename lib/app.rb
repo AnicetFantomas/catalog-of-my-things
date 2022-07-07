@@ -42,13 +42,10 @@ class App
     puts '6. Add a new genre'
     puts '7. List all music'
     puts '8. List all genres'
-<<<<<<< HEAD
-=======
     puts '9. Add a new Game'
     puts '10. Add a new Author'
     puts '11. List all games'
     puts '12. List all the authors'
->>>>>>> development
     puts '13. Exit'
     puts '================'
     puts 'Enter your choice: '
@@ -73,6 +70,6 @@ class App
     puts('Thanks for using My Things!')
     save_books_labels(@books, @labels)
     save_games_authors(@games, @authors)
-    save_musics_genres(@musics, @genres)
+    save_music_genres(@musics, @genres)
   end
 end
