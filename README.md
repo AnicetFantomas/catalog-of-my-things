@@ -47,8 +47,8 @@ For more details, see [the Installation docs page](https://www.ruby-lang.org/en/
 
  **Zelalem Mekonnen**
 
-- GitHub: [GitHub](https://github.com/zmekonnen251)
-- Twitter: [Twitter](https://twitter.com/mek_zela)
+- GitHub: [@zelalem251](https://github.com/zmekonnen251)
+- Twitter: [@mek_zela](https://twitter.com/mek_zela)
 - LinkedIn: [Zelalem G. Mekonnen](https://www.linkedin.com/in/zelalem-getachew/)
 
 **Alfred Bisimwa**
