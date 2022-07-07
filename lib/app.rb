@@ -1,58 +1,72 @@
+require_relative 'book'
+require_relative 'label'
+require_relative '../data_module/load_data'
+require_relative '../data_module/save_data'
+require_relative 'book_label_utils'
+require_relative './utility_music'
+require_relative 'music_album'
+require_relative 'genre'
+
 class App
-  def options
-    puts '
-    you can enter any number you want:
-     1 - List all books
-     2 - List all music albums
-     3 - List all movies
-     4 - List all games
-     5 - List all genres
-     6 - List all authors
-     7 - List all sources
-     8 - List all labels
-     9 - Add a book
-     10 - Add a music album
-     11 - Add a movie
-     12 - Add a game
-     13 - Exit'
-    puts ' Please select an option from the list above: '
+  include SaveData
+  include LoadData
+  include BookLabelUtils
+  include UtilityMusic
+
+  def initialize()
+    @labels = load_labels
+    @books = load_books
+    @musics = load_musics
+    @genres = load_genres
   end
 
-  # rubocop:disable Metrics
-  def start
-    options
-    print 'Enter Option: '
-    input = gets.chomp
-    case input
-    when '1'
-      puts 'list of books'
-    when '2'
-      puts 'list all music albums'
-    when '3'
-      puts 'List all movies'
-    when '4'
-      puts 'List all games'
-    when '5'
-      puts 'List all genres'
-    when '6'
-      puts 'List all authors'
-    when '7'
-      puts 'List all sources'
-    when '8'
-      puts 'List all labels'
-    when '9'
-      puts 'Add a book'
-    when '10'
-      puts 'Add a music album'
-    when '11'
-      puts 'Add a movie'
-    when '12'
-      puts 'Add a game'
-    when '13'
-      puts 'Bye....'
-    else
-      puts 'Invalid option'
-    end
+  def run
+    display_options
+    choice_options
   end
-  # rubocop:enable Metrics
+
+  def display_options
+    puts 'List of My Things'
+    puts '================'
+    puts '1. Add a new book'
+    puts '2. Add a new label'
+    puts '3. Add a new music'
+    puts '4. Add a new genre'
+    puts '5. List all books'
+    puts '6. List all labels'
+    puts '7. List all music'
+    puts '8. List all genres'
+    puts '9. Exit'
+    puts '================'
+    puts 'Enter your choice: '
+  end
+
+  def choice_options
+    choice = gets.chomp.to_i
+    while choice != 9
+      case choice
+      when 1
+        add_book(@books)
+      when 2
+        add_label(@labels)
+      when 3
+        add_music(@musics)
+      when 4
+        add_genre(@genres)
+      when 5
+        list_books(@books)
+      when 6
+        list_labels(@labels)
+      when 7
+        list_music(@musics)
+      when 8
+        list_genres(@genres)
+      else
+        puts 'Invalid choice'
+      end
+      display_options
+      choice = gets.chomp.to_i
+    end
+    save_all(@books, @labels, @musics, @genres)
+  end
 end

@@ -1,0 +1,5 @@
+CREATE TABLE labels (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(50),
+  color VARCHAR(50)
+);
