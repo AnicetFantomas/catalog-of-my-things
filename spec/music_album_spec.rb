@@ -4,7 +4,7 @@ require_relative '../lib/genre'
 describe Genre do
   before :each do
     @item = Item.new('2000-01-01')
-    @genre = Genre.new(name: 'any name')
+    @genre = Genre.new('any name')
   end
 
   it 'has a name' do
