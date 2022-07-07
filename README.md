@@ -1,7 +1,7 @@
 # catalog-of-my-things
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> OOP_School_library is a simple ruby console application that uses object oriented programming concepts like classes, objects, inheritance to constructs a simple but yet powerful application. 
+>  
 
 
 ## Built With
@@ -35,7 +35,7 @@ Gets all the required dependencies of the projects.
 
 For more details, see [the Installation docs page](https://www.ruby-lang.org/en/).
 
-## Author
+## Authors
 
 <a href="https://github.com/AnicetFantomas" target="blank"><img align="center"
       src="https://avatars.githubusercontent.com/u/94958024?s=400&u=d381903f2405198e53ab824f3b5f35f30158a1ac&v=4"
@@ -45,6 +45,17 @@ For more details, see [the Installation docs page](https://www.ruby-lang.org/en/
 - Twitter: [@FantomasAnicet](https://twitter.com/FantomasAnicet)
 - LinkedIn: [Anicet Murhula](https://www.linkedin.com/in/anicet-murhula/)
 
+ **Zelalem Mekonnen**
+
+- GitHub: [GitHub](https://github.com/zmekonnen251)
+- Twitter: [Twitter](https://twitter.com/mek_zela)
+- LinkedIn: [Zelalem G. Mekonnen](https://www.linkedin.com/in/zelalem-getachew/)
+
+**Alfred Bisimwa**
+
+- GitHub: [@alfredbis29](https://github.com/Alfredbis29)
+- Twitter: [@AlfredBisimwa](https://twitter.com/AlfredBisimwa1)
+- LinkedIn: [AlfredBis](https://www.linkedin.com/in/kalumuna-bisimwa-0501a81a8/)
 
 ## 🤝 Contributing
 
