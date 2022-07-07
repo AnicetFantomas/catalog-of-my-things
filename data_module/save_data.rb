@@ -1,8 +1,10 @@
 require 'json'
 module SaveData
-  def save_all(books, labels)
+  def save_all(books, labels, games, authors)
     save_books(books)
     save_labels(labels)
+    save_games(games)
+    save_authors(authors)
   end
 
   def save_books(books)
@@ -22,5 +24,24 @@ module SaveData
     end
 
     File.write('./data/labels.json', JSON.generate(labels_to_save))
+  end
+
+  def save_games(games)
+    games_to_save = []
+    games.each do |game|
+      books_to_save << {'multiplayer' => game.multiplayer, 'last_played_at' => game.last_played_at, 
+        'publish_date' => game.publish_date}
+      end
+
+      File.write('./data/games.json', JSON.generate(games_to_save))
+    end
+
+  def save_authors(authors)
+    authors_to_save = []
+    authors.each do |author|
+      authors_to_save << {'first_name' => author.first_name, 'last_name' => author.last_name}
+    end
+
+    File.write(',/data/authors.json', JSON.generate(games_to_save))
   end
 end
