@@ -1,30 +1,22 @@
-require './genre'
-require './item'
+require_relative '../lib/item'
+require_relative '../lib/genre'
+require_relative '../lib/label'
 
-describe 'Genre class tests' do
+describe Genre do
   before :each do
-    @genre = Genre.new(name: 'Rock')
-    @item = Item.new(publish_date: '01/01/2001', archived: false, id: nil)
+    @genre = Genre.new('Fantasy')
   end
 
-  describe '#initialize' do
-    it 'should initialize with a name' do
-      expect(@genre.name).to eq('Rock')
-    end
-
-    it 'should be a Genre' do
-      expect(@genre).to be_instance_of(Genre)
-    end
+  it 'has a name' do
+    expect(@genre.name).to eq('Fantasy')
   end
 
-  describe 'Unit test for Genre class' do
-    it 'should add an item to the genre' do
-      @genre.add_item(@item)
-      expect(@genre.items.length).to eq(1)
-    end
+  it 'has items' do
+    expect(@genre.items).to eq([])
+  end
 
-    it 'check if id is not nil' do
-      expect(@genre.id.nil?).to be_falsey
-    end
+  it 'can add items' do
+    @genre.add_item(Item.new('2000-01-01'))
+    expect(@genre.items.length).to eq(1)
   end
 end
