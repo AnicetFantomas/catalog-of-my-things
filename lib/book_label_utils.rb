@@ -32,4 +32,17 @@ module BookLabelUtils
       puts '================'
     end
   end
+
+  def book_label_options(input, books, labels)
+    case input
+    when 1
+      add_book(books)
+    when 2
+      add_label(labels)
+    when 3
+      list_books(books)
+    when 4
+      list_labels(labels)
+    end
+  end
 end

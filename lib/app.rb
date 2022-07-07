@@ -55,6 +55,8 @@ class App
     choice = gets.chomp.to_i
     while choice != 13
       case choice
+      when 1..4
+        book_label_options(choice, @books, @labels)
       when 5..8
         music_options(choice, @musics, @genres)
       when 9..12
@@ -65,9 +67,9 @@ class App
       display_options
       choice = gets.chomp.to_i
     end
-
+    puts('Thanks for using My Things!')
     save_books_labels(@books, @labels)
     save_games_authors(@games, @authors)
-    save_musics_genres(@musics, @genres)
+    save_music_genres(@musics, @genres)
   end
 end

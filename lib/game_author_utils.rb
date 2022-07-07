@@ -26,9 +26,9 @@ module GameAuthorUtils
   end
 
   def list_authors(authors)
-    authors.each do |_author|
-      puts "first name: #{label.first_name}"
-      puts "last name: #{label.last_name}"
+    authors.each do |author|
+      puts "first name: #{author.first_name}"
+      puts "last name: #{author.last_name}"
       puts '================'
     end
   end
