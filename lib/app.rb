@@ -32,63 +32,28 @@ class App
     puts '2. Add a new label'
     puts '3. List all books'
     puts '4. List all labels'
-    puts '5. Exit'
+    puts '9. Add a new Game'
+    puts '10. Add a new Author'
+    puts '11. List all games'
+    puts '12. List all the authors'
+    puts '13. Exit'
     puts '================'
     puts 'Enter your choice: '
   end
 
   def choice_options
     choice = gets.chomp.to_i
-    while choice != 5
+    while choice != 13
       case choice
-      when 1
-        add_book(@books)
-      when 2
-        add_label(@labels)
-      when 3
-        list_books(@books)
-      when 4
-        list_labels(@labels)
+      when 9..12
+        game_author_options(choice, @games, @authors)
       else
         puts 'Invalid choice'
       end
       display_options
       choice = gets.chomp.to_i
     end
-    save_all(@books, @labels)
-  end
-
-  def display_options_games_author
-    puts 'List of Games'
-    puts '================'
-    puts '1. Add a new Game'
-    puts '2. Add a new Author'
-    puts '3. List all games'
-    puts '4. List all the authors'
-    puts '5. Exit'
-    puts '================'
-    puts 'Enter your choice: '
-  end
-
-  def choice_options_games_author
-    choice = gets.chomp.to_i
-    while choice != 5
-      case choice
-      when 1
-        add_book(@games)
-      when 2
-        add_label(@authors)
-      when 3
-        list_books(@games)
-      when 4
-        list_labels(@authors)
-      else
-        puts 'Invalid choice'
-      end
-      display_options_games_author
-      choice = gets.chomp.to_i
-    end
-    save_all(@books, @labels)
+    save_all(@books, @labels, @games, @authors)
   end
 
 end

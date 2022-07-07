@@ -6,15 +6,15 @@ module GameAuthorUtils
         last_played_at = gets.chomp
         puts 'Enter the game publish date: '
         publish_date = gets.chomp
-        games << Game.new(Multiplayer, last_played_at, publish_date)
+        games << Game.new(multiplayer, last_played_at, publish_date)
     end
 
-    def add_author(_authors)
+    def add_author(authors)
         puts 'Enter the author first name: '
         first_name = gets.chomp
         puts 'Enter the author last name: '
         last_name = gets.chomp
-        @author << Author.new(first_name, last_name)
+        authors << Author.new(first_name, last_name)
     end
 
     def list_games(games)
@@ -31,5 +31,18 @@ module GameAuthorUtils
           puts "last name: #{label.last_name}"
           puts '================'
         end
+      end
+
+      def game_author_options(choice, games, authors)
+        case choice
+            when 9 
+                add_game(games)
+            when 10 
+                add_author(authors)
+            when 11
+                list_games(games)
+            when 12
+                list_authors(authors)
+            end
       end
 end

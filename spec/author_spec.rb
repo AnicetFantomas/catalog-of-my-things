@@ -18,9 +18,9 @@ describe 'Label' do
     end
 
     it 'should add multiple items to a label' do
-        author = Author.new('Gift', 'red')
-        game = Game.new('Pengiun', 'good', '2022-01-01')
-        game2 = Game.new('Spring', 'good', '2022-01-01')
+        author = Author.new('Anicet', 'Viserion')
+        game = Game.new('Tetris', '2022-01-01', '2022-01-01')
+        game2 = Game.new('Tetris', '2022-01-01', '2022-01-01')
         author.add_item(game)
         author.add_item(game2)
         expect(author.items).to eq [game, game2]
