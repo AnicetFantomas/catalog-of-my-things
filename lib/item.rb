@@ -10,6 +10,7 @@ class Item
     @author = nil
     @archived = false
     @label = nil
+    @genre = nil
   end
 
   def can_be_archived?
@@ -28,5 +29,9 @@ class Item
   def add_author(author)
     @author = author
     author.add_item(self)
+
+  def add_genre(genre)
+    @genre = genre
+    genre.add_item(self)
   end
 end

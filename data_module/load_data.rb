@@ -1,7 +1,10 @@
+require 'json'
 require_relative '../lib/book'
 require_relative '../lib/label'
 require_relative '../lib/game'
 require_relative '../lib/author'
+require_relative '../lib/music_album'
+require_relative '../lib/genre'
 
 module LoadData
   def load_books
@@ -34,6 +37,13 @@ module LoadData
       games_hash = JSON.parse(games_json)
       games_hash.map do |game_hash|
         Game.new(game_hash['multiplayer'], game_hash['last_played_at'], game_hash['publish_date'])
+        
+  def load_musics
+    if File.exist?('./data/musics.json')
+      musics_json = File.read('./data/musics.json')
+      musics_hash = JSON.parse(musics_json)
+      musics_hash.map do |music_hash|
+        MusicAlbum.new(music_hash['publish_date'], music_hash['on_spotify'])
       end
     else
       []
@@ -46,6 +56,13 @@ module LoadData
       authors_hash = JSON.parse(authors_json)
       authors_hash.map do |author_hash|
         Author.new(author_hash['first_name'], author_hash['last_name'])
+
+  def load_genres
+    if File.exist?('./data/genres.json')
+      genres_json = File.read('./data/genres.json')
+      genres_hash = JSON.parse(genres_json)
+      genres_hash.map do |genre_hash|
+        Genre.new(genre_hash['name'])
       end
     else
       []
