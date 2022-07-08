@@ -57,6 +57,10 @@ For more details, see [the Installation docs page](https://www.ruby-lang.org/en/
 - Twitter: [@AlfredBisimwa](https://twitter.com/AlfredBisimwa1)
 - LinkedIn: [AlfredBis](https://www.linkedin.com/in/kalumuna-bisimwa-0501a81a8/)
 
+
+## Video Explanation [Video](https://drive.google.com/file/d/17Ilk8_BH92OZfHT66flkYe2V7V8eMlb6/view?usp=sharing)
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
